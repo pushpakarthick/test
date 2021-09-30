@@ -1,10 +1,9 @@
 pipeline {
     agent 
-
 stages{
     stage("Git checkout"){
     steps{
-    git branch: 'main', credentialsId: '0591e46e-0352-4203-84d5-5c3c1ea534c0', url: 'https://github.com/pushpakarthick/test'
+    git branch: "main", credentialsId: "0591e46e-0352-4203-84d5-5c3c1ea534c0", url: 'https://github.com/pushpakarthick/test'
     }
 }
 
@@ -15,7 +14,9 @@ stages{
 }
    stage("Terraform apply"){
    steps{
-{
-     sh 'terraform apply'
+       sh 'terraform apply'
+   }
+ }
+     
   }
 }
